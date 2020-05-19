@@ -1,0 +1,41 @@
+﻿@using System.Security.Claims
+@model State
+<style>
+table, td {
+ padding: 15px;
+  text-align: left;
+  border: 1px solid black;
+}
+tr {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+<table>
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>area</td>
+        <td>population</td>
+        <td>language</td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>@Model.id</td>
+        <td>@Model.name</td>
+        <td>@Model.area</td>
+        <td>@Model.population</td>
+        <td>@Model.language</td>
+        @if (User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType).Value == "admin")
+        {
+            <td>
+                <a href="~/state/editState/@Model.id">edit</a>
+            </td>
+            <td>
+                <a href="~/state/deleteState/@Model.id">delete</a>
+            </td>
+        }
+    </tr>
+</table>

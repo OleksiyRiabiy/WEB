@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Client>
+<style>
+table, td {
+ padding: 15px;
+  text-align: left;
+  border: 1px solid black;
+}
+tr {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+<h3>clients</h3>
+<table>
+<tr>
+    <td>
+        <p>id</p>
+    </td>
+   
+     <td>
+         <p>first_name</p>
+     </td>
+     
+     <td>
+         <p>last_name</p>
+     </td>
+    
+     <td>
+         <p>email</p>
+     </td>
+     
+     <td>
+         <p>role</p>
+     </td>
+     
+     <td>
+         <p>active</p>
+     </td>
+      
+     <td><p>password</p></td>
+     
+</tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+    </tr>
+}
+
+    </table >

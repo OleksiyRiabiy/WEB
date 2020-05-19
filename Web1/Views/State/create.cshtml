@@ -1,0 +1,30 @@
+﻿@model State
+
+
+<h2>Create State</h2>
+ 
+@using (Html.BeginForm()) 
+{ 
+   
+    @Html.LabelFor(model => model, "name")
+    <br />
+    @Html.EditorFor(model => model.name)
+  
+    <br /><br />
+    @Html.LabelFor(model => model.area, "area")
+    <br />
+    @Html.EditorFor(model => model.area)
+   
+    <br /><br />
+    @Html.LabelFor(model => model.population, "population")
+    <br />
+    @Html.EditorFor(model => model.population)
+   
+    <br /><br />
+    @Html.LabelFor(model => model.language, "language")
+    <br />
+    @Html.EditorFor(model => model.language)
+    
+    <br /><br />
+    <input type="submit" value="add" />
+}

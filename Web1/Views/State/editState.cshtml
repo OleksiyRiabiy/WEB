@@ -1,0 +1,36 @@
+﻿
+@model Web1.Models.State
+<
+@using (Html.BeginForm("editState", "state", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.id)
+        <p>
+            @Html.LabelFor(m => m.name, "name")
+            <br />
+            @Html.EditorFor(m => m.name)
+          
+        </p>
+        <p>
+            @Html.LabelFor(m => m.area, "area")
+            <br />
+            @Html.EditorFor(m => m.area)
+      
+ 
+        </p>
+        <p>
+            @Html.LabelFor(m => m.population, "population")
+            <br />
+            @Html.EditorFor(m => m.population)
+        
+        </p>
+        <p>
+            @Html.LabelFor(m => m.language, "language")
+            <br />
+            @Html.EditorFor(m => m.language)
+          
+        </p>
+       
+        <p><input type="submit" value="save" /></p>
+    </fieldset>
+}
